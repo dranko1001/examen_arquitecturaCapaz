@@ -1,13 +1,17 @@
 //?MODULO PARA CONEXION A LA BASE DE DATOS
 
 import mysql from 'mysql2';
+import dotenv from "dotenv"; 
+dotenv.config();
+
 let cnx;
 try {
     cnx = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        database: "interpolice",
-        port: "3306", //3306 puerto por defecto de mysql, pero este cambia dependiendo del puerto que se haya configurado en el servidor
+        host: process.env.HOST || "localhost",
+        user: process.env.DB_USER || "root",
+        password: process.env.DB_PASSWORD || "",
+        database: process.env.DB_BASE || "interpolice",
+        port: process.env.DB_PORT || "3306", 
     });
     // console.log (`conexion exitosa a la base de datos:${cnx}`);
 } catch (error) {

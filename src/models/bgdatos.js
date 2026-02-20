@@ -9,7 +9,7 @@ try {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_BASE,
         port:process.env.DB_PORT,
-        wififorconnection:"true",
+        wififorconnection:true,
         connectionlimit: 10,
         queuelimit: 0
     });

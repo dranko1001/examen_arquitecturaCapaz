@@ -5,7 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv"; //importa la libreria para manejar variables de entorno
 //!lo de arriba no debe ir ahi nunca, es solo para el ejemplo
 dotenv.config(); //carga las variables de entorno desde el archivo .env
-const PORT= 3000 || process.env.APP_PORT; //puerto donde se ejecuta la API, si no encuentra la variable de entorno, usa el puerto 3000
+const port = process.env.PORT || 3000; // Render establece automáticamente la variable PORT
 import { ciudadano } from "./modules/ciudadano.js";
 import { usuarios } from "./modules/usuarios.js";
 
@@ -13,7 +13,7 @@ import { usuarios } from "./modules/usuarios.js";
 const app = express();
 app.use(express.json()); //serializa los request y responde
 app.use(cors());
-const port = 3000;
+// El puerto ya está definido arriba
 
 //*primer recurso - endpoint
 app.get("/", (request, response) => {
