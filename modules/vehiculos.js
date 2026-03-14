@@ -22,7 +22,7 @@ vehiculos.get('/vehiculos/listartodos', (request, response) => {
 
 });
 
-
+//me sale que 200 ok pero por el response.status, pero algunas veces no me encontraba la placa "404"
 
 vehiculos.get('/vehiculos/listarporplaca/:placa', (request, response) => {
 
