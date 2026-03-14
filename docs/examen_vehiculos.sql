@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2026 at 03:29 PM
+-- Generation Time: Mar 14, 2026 at 04:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -34,9 +34,16 @@ CREATE TABLE `vehiculos` (
   `marca` varchar(200) NOT NULL,
   `modelo` varchar(200) NOT NULL,
   `fotografia` varchar(200) NOT NULL,
-  `observaciones` varchar(200) NOT NULL,
-  `vehiculoscol` varchar(45) NOT NULL
+  `observaciones` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `vehiculos`
+--
+
+INSERT INTO `vehiculos` (`placa`, `descripcion`, `cilindraje`, `marca`, `modelo`, `fotografia`, `observaciones`) VALUES
+('1', 'a', '2000 cc', 'Toyota', '2022', 'camionet.jpg', 'viene de anserma'),
+('123ABC', 'motocicleta', '150', 'yamaha', '2023', 'foto.png', 'tuneada');
 
 --
 -- Indexes for dumped tables

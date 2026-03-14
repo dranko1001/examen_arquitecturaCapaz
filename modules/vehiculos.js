@@ -29,7 +29,7 @@ vehiculos.get('/vehiculos/listarporplaca/:placa', (request, response) => {
 
     let placa=request.params.placa;
 
-    let sql = 'SELECT * FROM vehiculos WHERE placa= "?"';
+    let sql = 'SELECT * FROM vehiculos WHERE placa = ?';
  
     cnx.query(sql, [placa], (error, result, fields) => {
         response.status(200).send(result);
