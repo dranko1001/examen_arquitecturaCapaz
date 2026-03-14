@@ -6,8 +6,7 @@ import dotenv from "dotenv"; //importa la libreria para manejar variables de ent
 //!lo de arriba no debe ir ahi nunca, es solo para el ejemplo
 dotenv.config(); //carga las variables de entorno desde el archivo .env
 const port = process.env.PORT || 3000; // Render establece automáticamente la variable PORT
-import { ciudadano } from "./modules/ciudadano.js";
-import { usuarios } from "./modules/usuarios.js";
+import { vehiculos } from "./modules/vehiculos.js";
 
 //*instanciamos la libreria express en un objeto - app
 const app = express();
@@ -17,22 +16,10 @@ app.use(cors());
 
 //*primer recurso - endpoint
 app.get("/", (request, response) => {
-    response.status(200).send("API REST en Express");});
+    response.status(200).send("API REST en Express - Vehiculos CRUD");});
 
-//*segundo recurso - endpoint
-// app.get("/ciudadano", (request, response) => {
-//     response.status(200).send({
-//         id: 1,
-//         nombre: "Maximo",
-//         apodo: "Purificador",
-//         status: true,
-//         edad: 25,
-//     });
-// });
 
-//asigna rutas de cada modulo a la app, del modulo de ciudadano
-app.use('/', ciudadano);
-app.use('/', usuarios);
+app.use('/', vehiculos);
 
 
 
